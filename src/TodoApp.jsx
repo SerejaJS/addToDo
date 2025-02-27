@@ -53,38 +53,4 @@ function App() {
 
 export default App;
 
-// 2. Создание компонента TodoApp
-//    ; • Создать базовую структуру компонента TodoApp. ++++
-//    ; • Импортировать компоненты TodoList и TodoForm. ++++
-//    • В TodoApp создать состояние для хранения задач в виде массива объектов. Каждый объект должен содержать:
-//      • id (уникальный идентификатор) ++++
-//      • text (текст задачи) ++++
-//      • completed (логическое значение, указывающее, выполнена задача или нет) ++++
 
-// function TestPropsArray({id,text,completed} ) {
-//   console.log(id,text);
-//   return (
-//     <div>
-//       <h2>ИД: {id} </h2>
-//       <p>ТЕКСТ: {text}</p>
-//     </div>
-//   );
-// }
-
-// function App() {
-//   // const [items, setItems] = useState([]);
-
-//   return (
-//     <>
-//       <div className="toDoMine">
-//         <TestPropsArray
-//           id={testArray[0].id}
-//           text={testArray[0].text}
-//           completed={testArray[0].completed}
-//         />
-//         <TestPropsArray {...testArray[1]} />
-//         <TestPropsArray {...testArray[2]} />
-//       </div>
-//     </>
-//   );
-// }

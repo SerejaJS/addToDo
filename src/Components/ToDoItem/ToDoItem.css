@@ -12,15 +12,12 @@
     white-space: normal;
     text-wrap: wrap;
     background-color: #ff2b2b67;
-    /* background-color: red; */
     word-wrap: break-word;
     white-space: normal;
   }
   
   .toggleButton {
       margin-left: 10px;
-    /* width:30px ; */
-    /* height: 18px; */
   }
   
   .completed {
@@ -30,6 +27,6 @@
     }
 
     li {
-        width: 200px; /* Пример фиксированной ширины */
+        width: 200px;
        
       }

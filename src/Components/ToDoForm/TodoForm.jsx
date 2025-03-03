@@ -26,7 +26,7 @@ export default function TodoForm({ addTask }) {
   }
 
   return (
-    <div>
+    <>
       <form className="addForm">
         <input
           type="text"
@@ -40,7 +40,7 @@ export default function TodoForm({ addTask }) {
           Добавить
         </button>
       </form>
-    </div>
+    </>
   );
 }
 

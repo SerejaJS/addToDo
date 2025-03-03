@@ -10,7 +10,7 @@
   border-radius: 8px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   outline: none;
-  margin: 1rem 1rem 0 1rem; /* Верх 5px, право 10px, низ 15px, лево 20px */
+  margin: 1rem 1rem 0 1rem; 
   text-wrap: wrap;
 }
 
@@ -53,7 +53,6 @@
 }
 
 .addButton {
-  /* padding: 12px 16px; */
   width: 90px;
   height: 56px;
   font-size: 10px;

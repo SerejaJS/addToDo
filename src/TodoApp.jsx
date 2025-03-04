@@ -22,15 +22,8 @@ function App() {
 
   //Изменяю статус задачи по кнопке
   function toggleButton(id) {
-    setItems(
-      items.map(function (item) {
-        if (item.id === id) {
-          return {
-            id: item.id,
-            value: item.value,
-            completed: !item.completed,
-          };
-        }
+    setItems(items.map(item =>  {...item, completed: item.id === id ? !item.completed : item.completed})
+      }
         return item;
       })
     );
@@ -53,4 +46,10 @@ function App() {
 
 export default App;
 
-
+// items.map(function (item) {
+//         if (item.id === id) {
+//           return {
+//             id: item.id,
+//             value: item.value,
+//             completed: !item.completed,
+//           };

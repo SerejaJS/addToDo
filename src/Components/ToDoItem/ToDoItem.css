@@ -1,0 +1,32 @@
+.buttonDeleteItem {
+    margin-left: 50px;
+    background-image: url("/src/x.png");
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+  }
+  
+  .liStyle {
+    width: 600px;
+    font-size: 20px;
+    white-space: normal;
+    text-wrap: wrap;
+    background-color: #ff2b2b67;
+    word-wrap: break-word;
+    white-space: normal;
+  }
+  
+  .toggleButton {
+      margin-left: 10px;
+  }
+  
+  .completed {
+      background-color: #40ff4a80;
+      text-decoration: line-through;
+      color: gray;
+    }
+
+    li {
+        width: 200px;
+       
+      }

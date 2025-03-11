@@ -2,15 +2,28 @@
 import React from "react";
 import "./ToDoList.css";
 import TodoItem from "../ToDoItem/TodoItem";
+import { Task } from "../../types/TypeTask";
 
-export default function TodoList({ stateItems, deleteTask, toggleTask }) {
+//для примера, addTask это
+// export interface ItoDoFormProps {
+//   addTask: (value: string) => void;
+// }
+
+interface ITodoListProps {
+  stateItems : Task[];
+  toggleTask: (id: number) => void;
+  deleteTask: (id: number) => void;
+}
+
+export default function TodoList({ stateItems, deleteTask, toggleTask } :ITodoListProps
+) {
   return (
     <div className="toDoItemsList">
       <h3 className="">Список задач:</h3>
       <ul className="ulStyle">
         {stateItems.map((item) => {
           return (
-            <TodoItem
+            <TodoItem 
               key={item.id}
               item={item}
               deleteTask={deleteTask}

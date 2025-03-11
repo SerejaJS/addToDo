@@ -1,31 +1,35 @@
+import { useState } from "react";
 import TodoForm from "./Components/ToDoForm/TodoForm";
 import TodoList from "./Components/ToDolist/TodoList";
-import { useState } from "react";
+import { Task } from "./types/TypeTask";
 import "./App.css";
 
+
 function App() {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<Task[]>([]);
   // Добавление новой задачи
-  function addTask(value) {
-    const newTask = {
-      id: Date.now(), // Генерирую себе ID задачи -- Не знаю как сделать так, чтобы ID задач начинался с №1???
+  function addTask(value: string) {
+    const newTask: Task = {
+      id: Date.now(), // Генерирую себе ID задачи
       value, //мой текст из инпута.
       completed: false, // статус задачи.
     };
 
-    setItems([...items, newTask]); //через ...Items я добавляю в новый массив свой объект.
+    setItems((prevItems) => [...prevItems, newTask]); //через ...Items я добавляю в новый массив свой объект.
   }
-  //удаление задачи
-  function deleteTaskButton(id) {
-    setItems(items.filter((item) => item.id !== id));
+
+  //удаление задачиЫ
+  function deleteTaskButton(id: number) {
+    setItems((prevItems) => prevItems.filter((item) => item.id !== id));
   }
 
   //Изменяю статус задачи по кнопке
-  function toggleButton(id) {
-    setItems(items.map(item =>  {...item, completed: item.id === id ? !item.completed : item.completed})
-      }
-        return item;
-      })
+  function toggleButton(id: number) {
+    setItems((prevItems) =>
+      prevItems.map((item) => ({
+        ...item,
+        completed: item.id === id ? !item.completed : item.completed,
+      }))
     );
   }
 
@@ -33,7 +37,6 @@ function App() {
     <>
       <div className="toDoMine">
         <TodoForm addTask={addTask} />
-
         <TodoList
           deleteTask={deleteTaskButton}
           toggleTask={toggleButton}
@@ -45,11 +48,3 @@ function App() {
 }
 
 export default App;
-
-// items.map(function (item) {
-//         if (item.id === id) {
-//           return {
-//             id: item.id,
-//             value: item.value,
-//             completed: !item.completed,
-//           };

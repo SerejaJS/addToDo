@@ -1,5 +1,13 @@
 import "./ToDoItem.css";
-export default function TodoItem({ item, deleteTask, toggleTask }) {
+import {Task} from "../../types/TypeTask"
+
+interface ItoDoItemProps {
+  item : Task;
+  deleteTask: (id: number) => void;
+  toggleTask: (id: number) => void;
+}
+
+export default function TodoItem({ item, deleteTask, toggleTask }: ItoDoItemProps) {
   return (
     <li
       className={`liStyle ${item.completed ? "completed" : "red"}`}

@@ -1,7 +1,13 @@
-import { useState } from "react";
+import { ChangeEvent, KeyboardEvent, useState } from "react";
 import "./FormStyle.css";
 
-export default function TodoForm({ addTask }) {
+
+ interface ItoDoFormProps {
+  addTask: (value: string) => void;
+}
+
+
+export default function TodoForm({ addTask }:ItoDoFormProps) {
   const [inputValue, setInputValue] = useState(""); // Мой инпут для ввода задачи
 
   function addTaskButton() {
@@ -14,11 +20,11 @@ export default function TodoForm({ addTask }) {
     }
   }
 
-  function handleInputChange(event) {
+  function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
     setInputValue(event.target.value); //обновляем новое значение для инпута через новое состояние через браузерное событие event
   }
   //   Добавляю задачу по нажатию Enter
-  function handleKeyEnter(event) {
+  function handleKeyEnter(event: KeyboardEvent<HTMLInputElement>) {
     if (event.key === "Enter") {
       event.preventDefault(); // preventDefault отменяет стандартное поведение браузера.
       addTaskButton(); // вызываю функцию добавления новой задачи.
@@ -43,7 +49,3 @@ export default function TodoForm({ addTask }) {
     </>
   );
 }
-
-//Если используется HTML тег <form> то:
-// если элементу button не указать type, то по умолчанию он будет = submit и  отправляет страницу на перезагрузку.
-// поэтому для решения лучше задать type = 'button' и перезагрузки не будет

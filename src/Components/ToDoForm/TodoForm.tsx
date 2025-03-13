@@ -1,13 +1,11 @@
 import { ChangeEvent, KeyboardEvent, useState } from "react";
 import "./FormStyle.css";
 
-
- interface ItoDoFormProps {
+interface ItoDoFormProps {
   addTask: (value: string) => void;
 }
 
-
-export default function TodoForm({ addTask }:ItoDoFormProps) {
+const TodoForm: React.FC<ItoDoFormProps> = ({ addTask }) => {
   const [inputValue, setInputValue] = useState(""); // Мой инпут для ввода задачи
 
   function addTaskButton() {
@@ -48,4 +46,6 @@ export default function TodoForm({ addTask }:ItoDoFormProps) {
       </form>
     </>
   );
-}
+};
+
+export default TodoForm;

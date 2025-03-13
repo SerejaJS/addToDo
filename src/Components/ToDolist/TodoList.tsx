@@ -4,11 +4,6 @@ import "./ToDoList.css";
 import TodoItem from "../ToDoItem/TodoItem";
 import { Task } from "../../types/TypeTask";
 
-//для примера, addTask это
-// export interface ItoDoFormProps {
-//   addTask: (value: string) => void;
-// }
-
 interface ITodoListProps {
   stateItems : Task[];
   toggleTask: (id: number) => void;

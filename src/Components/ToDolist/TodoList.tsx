@@ -2,8 +2,19 @@
 import React from "react";
 import "./ToDoList.css";
 import TodoItem from "../ToDoItem/TodoItem";
+import { Task } from "../../types/TypeTask";
 
-export default function TodoList({ stateItems, deleteTask, toggleTask }) {
+interface ITodoListProps {
+  stateItems: Task[];
+  toggleTask: (id: number) => void;
+  deleteTask: (id: number) => void;
+}
+
+const TodoList: React.FC<ITodoListProps> = ({
+  stateItems,
+  deleteTask,
+  toggleTask,
+}) => {
   return (
     <div className="toDoItemsList">
       <h3 className="">Список задач:</h3>
@@ -21,4 +32,5 @@ export default function TodoList({ stateItems, deleteTask, toggleTask }) {
       </ul>
     </div>
   );
-}
+};
+export default TodoList;
